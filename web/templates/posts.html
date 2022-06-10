@@ -1,0 +1,18 @@
+{% extends "posts_div.html" %} {% block title %}{{ username }}'s Posts{% endblock %}
+{% block header %}{% if title %}{{ title }}{% else %} {{ username }}'s posts
+    {% if not is_friend %}
+        <a type="button" style="float: right;margin-top: 10px" class="btn btn-outline-primary"
+           href="/add-friends/{{ id }}">Follow</a>
+    {% else %}
+        <a type="button" style="float: right;margin-top: 10px" class="btn btn-outline-danger"
+           href="/remove-friends/{{ id }}">Unfollow</a>
+    {% endif %}
+{% endif %}{% endblock %} {% block footer %}
+    <div align="center">
+        <a href="/home"
+        >
+            <button type="button" class="btn btn-primary btn-lg">Back</button>
+        </a
+        >
+    </div>
+{% endblock %}

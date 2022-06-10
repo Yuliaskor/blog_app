@@ -1,0 +1,11 @@
+{% extends 'base.html' %}{% block title %}Users{% endblock %}
+{% block content %}
+    <h1 align="center">Users</h1>
+    <div class="list-group">
+        {% for user in users %}
+            <a href="/posts/{{ user.username }}" class="list-group-item list-group-item-action">
+                {{ user.username }}
+            </a>
+        {% endfor %}
+    </div>
+{% endblock %}
